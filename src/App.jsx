@@ -1,16 +1,22 @@
 import React from 'react'
 // import { useState } from 'react'
-import Titles from './components/Titles'
+// import Titles from './components/Titles'
 import MostRecentEQ from './FetchingData/MostRecentEQ'
 
 function App() {
 
+  function fetchMostRecentEQ(){
+    return <MostRecentEQ />
+  }
+
   
   return (
     <div className="App">
-      <h1>Get the 20 most recent earthquakes from all over in the world</h1>
-      <Titles />
-      <MostRecentEQ />
+      {
+
+      }
+      {/* <Titles /> */}
+      <button onClick={fetchMostRecentEQ}>Fetch</button>
     </div>
   )
 }
