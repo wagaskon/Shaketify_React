@@ -1,12 +1,24 @@
 import {useState, useEffect} from 'react'
 
 
-const useFetch = (url) => {
+const useFetch = (url,key, host) => {
     const [data, setdata]= useState(null)
     const [isPending, setisPending]= useState(true)
     const [error, seterror]= useState(null)
+    // const [apikey, setapikey]=useState(key)
+    // const [host, sethost]=useState(host)
 
     useEffect(()=>{
+    const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': key,
+          'X-RapidAPI-Host': host
+        }
+      };
+      
+//       fetch('https://everyearthquake.p.rapidapi.com/earthquakes?start=1&count=2&type=earthquake&latitude=33.962523&longitude=-118.3706975&radius=1000&units=miles&magnitude=3&intensity=1', options)
+//         
 
         fetch(url)
         .then(res=>{
