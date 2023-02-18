@@ -1,9 +1,10 @@
 import React from 'react'
 
 const Items = (item) => {
+  console.log(item)
   return (
-    <div>{item.location}</div>
-  )
+    <h1>Hhhhhhhhhhhhhhhhhhhhhhhhhhhhh</h1>
+    )
 }
 
 export default Items
