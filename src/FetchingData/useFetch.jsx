@@ -27,7 +27,7 @@ useEffect(()=>{
             // )
             // setdata(JSON.stringify(res.data))
           // I was at the following code:
-          setdata(JSON.stringify(res.data.map(item=>([item]))))
+          setdata(JSON.stringify(res.data.map(item=>(item))))
             setisPending(false)
             seterror(null)
             // console.log(isPending)
@@ -38,7 +38,7 @@ useEffect(()=>{
         })
 
     },[url,key,host])
-    return {data, isPending, error}   
+    return {data, isPending, error}
 }
 export default useFetch;
 
