@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-
+// import asign from "/functions/assigning.js"
 // Custom hook created to fetch data from the API
 const useFetch = (url,key,host) => {
     const [data, setdata]= useState(null)
@@ -21,10 +21,13 @@ useEffect(()=>{
             }
             return res.json()
         })
-        .then(data=>{
-            // const list =data.map(item=>item)
-             
-            setdata(JSON.stringify(data.data))
+        .then(res=>{
+            // setdata(JSON.stringify(res.data.map(item=>([item.magnitude,item.location,item.continent,item.country,item.data,item.alert,item.cdi,item.city,item.code,item.depth,item.distanceKM,item.dmin,item.felt,item.gap,item.geometryType,item.id,item.ids,item.latitude,item.locationDetails,item.longitude,item.magType,,item.mmi,item.net,item.nst,item.place,item.placeOnly,item.postcode,item.rms,item.sig,item.sources,item.status,item.subnational,item.time,item.timezone,item.title,item.tsunami,item.type,item.types,item.updated,item.url,item.detailsUrl]))))
+            
+            // )
+            // setdata(JSON.stringify(res.data))
+          // I was at the following code:
+          setdata(JSON.stringify(res.data.map(item=>([item]))))
             setisPending(false)
             seterror(null)
             // console.log(isPending)
